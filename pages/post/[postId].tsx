@@ -88,20 +88,20 @@ function PostPage() {
       </div>
       <div className='-my-5 rounded-b-md border border-t-0 border-gray-300 py-5 px-10 bg-white'>
         <hr className='py-2' />
-        {post?.comment?.map(com => 
-          <div className='relative flex items-center space-x-2 space-y-5' key={com.id}>
+        {post?.comment?.map((com: any) => 
+          <div className='relative flex items-center space-x-2 space-y-5' key={com?.id}>
             <hr className='absolute top-10 h-16 left-7 z-0 border' />
             <div className='z-50'>
-              <Avatar seed={com.username} />
+              <Avatar seed={com?.username} />
             </div>
             <div className='flex flex-col'>
               <p className='py-2 text-xs text-gray-400'>
-                <span className='font-semibold text-gray-600'>{com.username}</span>
+                <span className='font-semibold text-gray-600'>{com?.username}</span>
                 {' '}
-                <ReactTimeago live={false} date={com.created_at} />
+                <ReactTimeago live={false} date={com?.created_at ?? ''} />
               </p>
               <p>
-                {com.text}
+                {com?.text}
               </p>
             </div>
           </div>
